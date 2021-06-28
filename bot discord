@@ -1,0 +1,29 @@
+import discord
+from discord.ext import commands
+
+bot = commands.Bot(command_prefix='!')
+@bot.event
+async def on_ready():
+    print("bot prêt")
+    await bot.change_presence(status=discord.Status.online, activity=discord.Game("DY_Z APOCALIPSE.exe"))
+@bot.command()
+async def regles(ctx):
+    await ctx.send("Les regles:\n1. Pas d'insultes\n2.Pas de double compte\n3.Pas de spams")
+@bot.command()
+async def bienvenue(ctx, nouveau_member :discord.Member):
+    pseudo = nouveau_member.mention
+    await ctx.send(f"Bienvenue à {pseudo} sur le serveur Discord ! n'oublie pas d'ecrire !regles pour en savoir plus sur les regles du serveur ")
+@bienvenue.error
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send("Tu dois faire !bienvenue et @le pseudo")
+@warning.error
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send("Tu dois faire !warning et @le pseudo")
+
+
+
+token = "ODU4NzY5NjAyMzg4Njg4OTI5.YNi9hA.h6l_HW0bLPGV1c2lZZLWNfJ9CyY"
+print("Lancement du bot...")
+bot.run(token)
