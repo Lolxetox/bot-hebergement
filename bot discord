@@ -24,6 +24,6 @@ async def on_command_error(ctx, error):
 
 
 
-token = "ODU4NzY5NjAyMzg4Njg4OTI5.YNi9hA.h6l_HW0bLPGV1c2lZZLWNfJ9CyY"
+token = "41e09733def1fc33cefc0c4e0c9adbaa29e4e47a8437bbd58a1343271789f3c8"
 print("Lancement du bot...")
 bot.run(token)
